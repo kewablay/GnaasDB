@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GnaasDB Login</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- navbar -->
+    <nav class="bg-transparent fixed-top container mx-auto">
+      <picture class="logo">
+        <source
+          media="(max-width: 576px)"
+          srcset="images/gnaas-logo-dark.png"
+        />
+        <img
+          src="images/gnaas-logo-light.png"
+          alt="Chris standing up holding his daughter Elva"
+        />
+      </picture>
+
+      <!-- <div class="logo">
+        <img src="images/gnaas-logo-light.png" alt="" />
+      </div> -->
+    </nav>
+
+    <main class="grid grid-col-3_7">
+      <section class="sidebar bg-blue">
+        <img class="sidebarImg" src="images/login-img-sm.png" alt="" />
+      </section>
+
+      <section class="mainContent">
+        <form action="#" class="loginForm">
+          <h1 class="title">Login</h1>
+          <div class="inputFields">
+            <!-- input field -->
+            <div>
+              <p class="label">User Name</p>
+              <input type="text" id="userName" placeholder="Enter user name" />
+            </div>
+
+            <!-- input field -->
+            <div>
+              <p class="label">Password</p>
+              <input
+                type="password"
+                id="password"
+                placeholder="Enter user password"
+              />
+            </div>
+
+            <!-- button -->
+            <div>
+              <input type="submit" class="bg-blue" value="Login" />
+            </div>
+          </div>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>

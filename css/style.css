@@ -1,0 +1,156 @@
+/* @layer utilities {
+  .kb-auto {
+    @apply text-blue-900;
+  }
+} */
+
+@import url("https://fonts.googleapis.com/css2?family=BhuTuka+Expanded+One&family=Montserrat:wght@400;500;600;700&family=Quicksand:wght@300;400;500;700&display=swap");
+
+html {
+  width: 100vw;
+  height: 100vh;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+input {
+  border: 1px solid var(--clr-gray);
+}
+input:focus-visible {
+  outline: 1px solid var(--clr-gray);
+}
+
+:root {
+  --gnass-blue: #275abc;
+  --gnass-orange: #ffb221;
+  --clr-gray: #d2d2d2;
+  --clr-gray-200: #aaa;
+
+  /* Typography */
+  --text-700: 50px;
+  --text-600: 28px;
+  --text-500: 24px;
+  --text-400: 20px;
+  --text-300: 14px;
+  --text-200: 12px;
+
+  /* space */
+  --space-100: 1rem;
+}
+
+/* utility classes */
+.mx-auto {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+.container {
+  max-width: 1024px;
+}
+
+.grid {
+  display: grid;
+}
+.grid-col-3_7 {
+  grid-template-columns: 32% 68% !important;
+}
+.grid-cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.bg-blue {
+  background: var(--gnass-blue);
+  color: white;
+  font-weight: bold;
+}
+.bg-transparent {
+  background-color: transparent;
+}
+.fixed-top {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+}
+.label {
+  font-size: var(--text-300);
+}
+.title {
+  font-size: var(--text-600);
+}
+
+/* Login page css */
+nav {
+  z-index: 1;
+}
+.logo {
+  padding: 1.5rem;
+}
+.sidebar {
+  height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+.sidebar .sidebarImg {
+  position: absolute;
+  width: 100%;
+  top: 20%;
+}
+
+.mainContent {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.inputFields input {
+  padding: 0.5rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+.inputFields input[type="submit"] {
+  margin-top: var(--space-100);
+}
+.loginForm {
+  width: 40%;
+}
+
+/* Mobile screens */
+@media (max-width: 576px) {
+  :root {
+    /* Typography */
+    --text-700: 26px;
+    --text-600: 17px;
+    --text-500: 15px;
+    --text-400: 13px;
+    --text-300: 10px;
+    --text-200: 7px;
+
+    /* space */
+    --space-100: 1rem;
+  }
+
+  .sidebar {
+    display: none;
+  }
+  .grid {
+    display: block !important;
+  }
+  .grid-col-3_7 {
+    grid-template-columns: none !important;
+  }
+  .mainContent {
+    height: fit-content;
+    margin-top: 55%;
+  }
+  .loginForm {
+    width: 80%;
+  }
+  .loginForm .title {
+    text-align: center;
+  }
+}
