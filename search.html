@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GnaasDB Search</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- navbar -->
+    <nav class="bg-transparent fixed-top flex-between">
+      <picture class="logo">
+        <source
+          media="(max-width: 576px)"
+          srcset="images/gnaas-logo-dark.png"
+        />
+        <img
+          src="images/gnaas-logo-light.png"
+          alt="Chris standing up holding his daughter Elva"
+        />
+      </picture>
+
+      <div class="logo">
+        <img src="images/show-menu.png" alt="" />
+      </div>
+    </nav>
+
+    <main class="search grid grid-col-3_7">
+      <section class="main__sidebar bg-blue">
+        <div class="hideMenu">
+          <img id="hide-menu" src="images/hide-menu.png" alt="" />
+        </div>
+        <div class="search__sidebarTabs">
+          <!-- welcome message -->
+          <div class="search__introText">
+            <p>
+              Welcome to Gnaas UCC Database
+              <span style="position: relative"
+                ><img src="images/smiley.gif" alt=""
+              /></span>
+            </p>
+          </div>
+          <!-- first card in sidebar -->
+          <a href="#" class="card">
+            <div class="card__img">
+              <img src="images/add-entryImg.png" alt="" />
+            </div>
+            <div card__content>
+              <h3 class="card__subtitle">Add new Entry</h3>
+              <p class="card__info">Add new members to the database</p>
+            </div>
+          </a>
+          <!-- second card in sidebar-->
+          <a href="#" class="card">
+            <div class="card__img">
+              <img id="search" src="images/search-img.png" alt="" />
+            </div>
+            <div card__content>
+              <h3 class="card__subtitle">Add new Entry</h3>
+              <p class="card__info">Add new members to the database</p>
+            </div>
+          </a>
+        </div>
+
+        <!-- logout -->
+        <div>
+          <p class="flex-center">
+            <span><img src="images/logout.png" alt="" id="logoutIcon" /></span>
+            Logout
+          </p>
+        </div>
+      </section>
+
+      <section class="mainContent search__mainContent">
+        <form action="#" class="searchForm">
+          <h1 class="title">Search Database</h1>
+          <div class="searchBar">
+            <!-- search bar -->
+            <input type="text" id="searchBar" />
+            <input type="submit" value="Search" class="bg-blue" />
+          </div>
+
+          <!-- search results -->
+          <div class="search__results grid grid-cols-2">
+            <div class="results__card">
+              <div class="results__cardImage flex-center">
+                <img src="images/placeholder.png" alt="" />
+              </div>
+
+              <div class="results__cardInfo flex-center flex-col">
+                <p class="cardInfo__name">Kojo Kewa Junior</p>
+                <p class="cardInfo__num">0554378923</p>
+                <p class="cardInfo__year">2019</p>
+              </div>
+            </div>
+
+            <!--  -->
+            <div class="results__card">
+              <div class="results__cardImage flex-center">
+                <img src="images/placeholder.png" alt="" />
+              </div>
+
+              <div class="results__cardInfo flex-center flex-col">
+                <p class="cardInfo__name">Kojo Kewa Junior</p>
+                <p class="cardInfo__num">0554378923</p>
+                <p class="cardInfo__year">2019</p>
+              </div>
+            </div>
+
+            <!--  -->
+            <div class="results__card">
+              <div class="results__cardImage flex-center">
+                <img src="images/placeholder.png" alt="" />
+              </div>
+
+              <div class="results__cardInfo flex-center flex-col">
+                <p class="cardInfo__name">Kojo Kewa Junior</p>
+                <p class="cardInfo__num">0554378923</p>
+                <p class="cardInfo__year">2019</p>
+              </div>
+            </div>
+          </div>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>
