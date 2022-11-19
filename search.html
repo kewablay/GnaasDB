@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GnaasDB Search</title>
     <link rel="stylesheet" href="css/style.css" />
+    <script src="index.js"></script>
   </head>
   <body>
     <!-- navbar -->
@@ -21,15 +22,20 @@
         />
       </picture>
 
-      <div class="logo">
+      <div class="menu" onclick="showMenu()">
         <img src="images/show-menu.png" alt="" />
       </div>
     </nav>
 
     <main class="search grid grid-col-3_7">
       <section class="main__sidebar bg-blue">
-        <div class="hideMenu">
-          <img id="hide-menu" src="images/hide-menu.png" alt="" />
+        <div class="hideMenu" onclick="hideMenu()">
+          <img
+            id="hide-menu"
+            class="pointer"
+            src="images/hide-menu.png"
+            alt=""
+          />
         </div>
         <div class="search__sidebarTabs">
           <!-- welcome message -->
@@ -42,7 +48,7 @@
             </p>
           </div>
           <!-- first card in sidebar -->
-          <a href="#" class="card">
+          <a href="register.html" class="card">
             <div class="card__img">
               <img src="images/add-entryImg.png" alt="" />
             </div>
@@ -52,20 +58,20 @@
             </div>
           </a>
           <!-- second card in sidebar-->
-          <a href="#" class="card">
+          <a href="search.html" class="card">
             <div class="card__img">
               <img id="search" src="images/search-img.png" alt="" />
             </div>
             <div card__content>
-              <h3 class="card__subtitle">Add new Entry</h3>
-              <p class="card__info">Add new members to the database</p>
+              <h3 class="card__subtitle">Search Database</h3>
+              <p class="card__info">Search for members on the database</p>
             </div>
           </a>
         </div>
 
         <!-- logout -->
         <div>
-          <p class="flex-center">
+          <p class="flex-center pointer">
             <span><img src="images/logout.png" alt="" id="logoutIcon" /></span>
             Logout
           </p>
@@ -74,7 +80,16 @@
 
       <section class="mainContent search__mainContent">
         <form action="#" class="searchForm">
-          <h1 class="title">Search Database</h1>
+          <div class="flex flex-between">
+            <h1 class="title">Search Database</h1>
+
+            <img
+              class="pointer layout-toggler"
+              src="images/layout.png"
+              alt=""
+              onclick="changeLayout()"
+            />
+          </div>
           <div class="searchBar">
             <!-- search bar -->
             <input type="text" id="searchBar" />
@@ -82,7 +97,7 @@
           </div>
 
           <!-- search results -->
-          <div class="search__results grid grid-cols-2">
+          <div class="search__results grid grid-cols-2 changeLayout">
             <div class="results__card">
               <div class="results__cardImage flex-center">
                 <img src="images/placeholder.png" alt="" />

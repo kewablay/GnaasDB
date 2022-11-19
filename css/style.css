@@ -18,7 +18,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Montserrat", sans-serif;
-  overflow-y: hidden;
+  /* overflow-y: hidden; */
 }
 a {
   text-decoration: none;
@@ -30,12 +30,18 @@ input:focus-visible {
   outline: 1px solid var(--clr-gray);
 }
 
+input[type="submit"]:hover {
+  background: var(--clr-blue-300) !important;
+  cursor: pointer;
+}
+
 :root {
   --gnass-blue: #275abc;
   --gnass-orange: #ffb221;
   --clr-gray: #d2d2d2;
   --clr-gray-200: #aaa;
   --clr-blue-600: #244a93;
+  --clr-blue-300: rgb(75, 132, 255);
 
   /* Typography */
   --text-700: 50px;
@@ -47,11 +53,14 @@ input:focus-visible {
 
   /* space */
   --space-100: 1rem;
+  --space-200: 1.5rem;
 
-  --card-img-h: 60px;
-  --card-img-w: 100px;
-  --results-card-img-w: 100px;
-  --results-card-img-h: 100px;
+  --card-w: 80%;
+  --card-h: 100px;
+  --card-img-h: 40%;
+  --card-img-w: 30%;
+  --results-card-img-w: 50px;
+  --results-card-img-h: 50px;
 }
 
 /* utility classes */
@@ -61,6 +70,10 @@ input:focus-visible {
 }
 .container {
   max-width: 1024px;
+}
+.pointer {
+  cursor: pointer !important;
+  z-index: 1 !important;
 }
 .flex-between {
   display: flex;
@@ -77,6 +90,7 @@ input:focus-visible {
 .flex-col {
   flex-direction: column;
 }
+
 .grid {
   display: grid;
 }
@@ -112,6 +126,9 @@ nav {
   z-index: 1;
   padding-top: 1rem;
 }
+.menu {
+  display: none;
+}
 .logo {
   padding: 1.5rem;
 }
@@ -131,6 +148,7 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow-y: scroll;
 }
 .inputFields input {
   padding: 0.8rem;
@@ -173,8 +191,8 @@ nav {
   top: -50%;
 }
 .search__sidebarTabs .card {
-  width: 80%;
-  height: 100px;
+  width: var(--card-w);
+  height: var(--card-h);
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -193,12 +211,16 @@ nav {
 .card:not(:last-child) {
   margin-bottom: 1.5rem;
 }
-.card__img img {
+.card__img {
   width: var(--card-img-w);
   height: var(--card-img-h);
 }
+.card__img img {
+  width: 100%;
+  height: 100%;
+}
 .card__img #search {
-  height: calc(var(--card-img-h) + 20px);
+  height: calc(var(--card-img-h) + 80%);
 }
 .card__content {
   padding: 1rem;
@@ -214,7 +236,8 @@ nav {
 }
 
 /* search mainContent Section */
-.searchForm {
+.searchForm,
+.registerForm {
   width: 70%;
   margin-top: 5%;
 }
@@ -243,11 +266,35 @@ nav {
   padding: 0 2rem;
 }
 
+.changeLayout {
+  grid-template-columns: 1fr !important;
+  gap: 1rem;
+}
+.changeLayout .results__card {
+  display: flex;
+  align-items: center;
+}
+.changeLayout .results__cardInfo {
+  flex-direction: row !important;
+  /* gap: 1.5rem; */
+  justify-content: space-between;
+  padding: 0 1rem;
+  width: 100%;
+}
+.changeLayout .results__cardImage img {
+  width: var(--results-card-img-w);
+  height: var(--results-card-img-h);
+}
+.changeLayout .results__card {
+  height: 50px;
+  padding: 0.2rem;
+}
 /* Search Results */
 .search__results {
   overflow-y: scroll;
-  height: 60vh;
+  /* height: 60vh; */
   margin-top: 2rem;
+  transition: all 0.3s ease;
 }
 .results__card {
   border: 1px solid var(--clr-gray-200);
@@ -257,9 +304,32 @@ nav {
   margin: 0.3rem 0;
   font-size: var(--text-300);
 }
-.results__cardImage img {
-  /* width: var(--results-card-img-w);
-  height: var(--results-card-img-h); */
+
+/* Register or add new entry styles */
+.register__mainContent .inputFields {
+  column-gap: 1rem;
+  row-gap: 0.5rem;
+}
+.register__mainContent #register {
+  padding: 0.8rem;
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: var(--space-200);
+  color: white;
+  background: var(--gnass-blue);
+}
+
+/* some tablet screens */
+@media (max-width: 893px) {
+  .card__subtitle {
+    font-size: calc(var(--text-300) - 2px);
+    margin: 0;
+  }
+  .card__info {
+    font-size: calc(var(--text-200) - 2px);
+    font-weight: 400;
+    margin: 0.3rem 0;
+  }
 }
 
 /* Mobile screens */
@@ -279,24 +349,31 @@ nav {
     --card-img-w: 50px;
     --card-img-h: 30px;
   }
+
   /* body {
     height: fit-content;
   } */
   .sidebar {
     display: none;
   }
-  .grid {
-    display: block !important;
+  .menu {
+    display: block;
+    padding-right: 1rem;
   }
   .grid-col-3_7 {
     grid-template-columns: none !important;
   }
+  .grid-cols-2:not(.registerForm .grid-cols-2) {
+    grid-template-columns: 1fr;
+  }
   .mainContent {
     height: fit-content;
-    padding-top: 55%;
+    padding-top: 40%;
     overflow-y: scroll !important;
   }
-  .loginForm {
+  .loginForm,
+  .registerForm,
+  .searchForm {
     width: 80%;
   }
   .inputFields input {
@@ -323,7 +400,16 @@ nav {
     z-index: 10;
   }
   .search__mainContent {
-    padding-top: 30%;
+    padding-top: 20%;
     text-align: center;
+  }
+  .register__mainContent {
+    padding-top: 25%;
+  }
+  .register__mainContent .title {
+    text-align: center;
+  }
+  .mainContent .changeLayout {
+    gap: 0.5rem !important;
   }
 }
