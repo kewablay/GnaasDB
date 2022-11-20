@@ -3,14 +3,14 @@ function showMenu() {
   console.log("toggler clicked...");
   var sidebar = document.querySelector(".main__sidebar");
 
-  sidebar.style.display = "flex";
+  sidebar.style.right = "0";
 }
 
 function hideMenu() {
   console.log("hide menu clicked...");
   var sidebar = document.querySelector(".main__sidebar");
 
-  sidebar.style.display = "none";
+  sidebar.style.right = "-200%";
 }
 
 // results layout change

@@ -250,7 +250,7 @@ nav {
 .searchForm,
 .registerForm {
   width: 70%;
-  margin-top: 5%;
+  margin-top: 7%;
 }
 .searchBar {
   width: 100%;
@@ -432,11 +432,12 @@ nav {
   }
   .main__sidebar {
     position: fixed;
-    display: none;
-    right: 0;
+    /* display: none; */
+    right: -200%;
     top: 0;
     height: 100%;
     z-index: 10;
+    transition: all 0.3s linear;
   }
   .search__mainContent {
     padding-top: 20%;
