@@ -54,6 +54,10 @@ input[type="submit"]:hover {
   /* space */
   --space-100: 1rem;
   --space-200: 1.5rem;
+  --p-1: 1rem;
+  --p-2: 2rem;
+  --m-1: 0.4rem;
+  --m-2: 1rem;
 
   --card-w: 80%;
   --card-h: 100px;
@@ -67,6 +71,26 @@ input[type="submit"]:hover {
 .mx-auto {
   margin-left: auto !important;
   margin-right: auto !important;
+}
+.mr-1 {
+  margin-right: var(--m-1) !important;
+}
+.mr-2 {
+  margin-right: var(--m-2);
+}
+.flex {
+  display: flex !important;
+}
+.scroll-x {
+  overflow-x: scroll !important;
+}
+/* hide horizontal scroll for all browsers */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 .container {
   max-width: 1024px;
@@ -126,6 +150,7 @@ input[type="submit"]:hover {
 nav {
   z-index: 5;
   padding-top: 1rem;
+  transition: all 0.3s linear;
 }
 .nav-colored {
   background: white;
@@ -277,6 +302,19 @@ nav {
 .searchBar input[type="submit"] {
   padding: 0 2rem;
 }
+.yearGroups {
+  margin-top: 1.5rem;
+}
+.yearGroups__year {
+  border: 1px solid var(--clr-gray-200);
+  padding: 0 var(--p-2);
+  border-radius: 50px;
+  font-size: var(--text-200);
+  transition: all 0.2s ease;
+}
+.yearGroups__year:hover {
+  border-color: black;
+}
 
 .changeLayout {
   grid-template-columns: 1fr !important;
@@ -376,6 +414,7 @@ nav {
 
     /* space */
     --space-100: 1rem;
+    --p-2: 1.5rem;
 
     --card-img-w: 50px;
     --card-img-h: 30px;
