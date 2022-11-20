@@ -3,7 +3,7 @@ function showMenu() {
   console.log("toggler clicked...");
   var sidebar = document.querySelector(".main__sidebar");
 
-  sidebar.style.display = "block";
+  sidebar.style.display = "flex";
 }
 
 function hideMenu() {
@@ -19,3 +19,29 @@ function changeLayout() {
 
   results.classList.toggle("changeLayout");
 }
+
+// window.onscroll = function () {
+//   "use strict";
+
+//   if (document.body.scrollTop >= 200) {
+//       console.log("scrolled.........");
+//     nav.classList.add("nav-colored");
+//     nav.classList.remove("bg-transparent");
+// } else {
+//     nav.classList.add("bg-transparent");
+//     nav.classList.remove("nav-colored");
+//   }
+// };
+
+// remove navbar transparent on scroll
+window.onscroll = () => {
+  var nav = document.querySelector("nav");
+  if (window.scrollY > 50) {
+    console.log("scrolled........");
+    nav.classList.add("nav-colored");
+    nav.classList.remove("bg-transparent");
+  } else {
+    nav.classList.add("bg-transparent");
+    nav.classList.remove("nav-colored");
+  }
+};
